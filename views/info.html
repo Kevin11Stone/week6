@@ -17,8 +17,35 @@
     circumference of {{ round(2 * pi() * @radius, 3)}}</h3>
 
 
+<h3>My Favorite Fruits</h3>
+
+<ul>
+<repeat group="{{ @fruits }}" value="{{ @fruit }}">
+    <li>{{ @fruit }}</li>
+</repeat>
+</ul>
+
+<h4>Choose a Color</h4>
+
+<repeat group="{{ @colors }}" value="{{ @color }}">
+    <label><input type="radio" name="color" value="{{ @color }}">{{ ucfirst(@color)}}</label>
+</repeat>
+
+
+<h4>Cupcakes</h4>
+<repeat group="{{ @cupcakes }}" key="{{ @key }}" value="{{ @cupcake }}">
+<label><input type="checkbox" name="flavors[]" value="{{ @key }}">{{ @cupcake }}</label>
+</repeat>
+
+
+<h4>Age</h4>
+<check if="{{ @age > 30 }}">
+    <true>You are mature</true>
+    <false>You are a spring chicken</false>
+</check>
 
 </body>
+
 
 
 </html>
